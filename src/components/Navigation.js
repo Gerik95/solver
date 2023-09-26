@@ -157,56 +157,56 @@ const NavBarLinks = styled('div')`
   //}
 `
 const NavLinkCustom = styled(NavLink)`
-  //font-weight: 400;
-  //color: #ffff;
-  //cursor: pointer;
-  //position: relative;
-  //display: block;
-  //padding: 5px 0px;
-  //text-decoration: none;
-  //transition: .5s;
-  //z-index: 1;
+  font-weight: 400;
+  color: #ffff;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding: 5px 0px;
+  text-decoration: none;
+  transition: .5s;
+  z-index: 1;
 
-  //&:before {
-  //  content: '';
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //  border-top: 1px solid #B9110C;
-  //  border-bottom: 1px solid #B9110C;
-  //  transform: scaleY(2);
-  //  opacity: 0;
-  //  transition: .5s;
-  //}
-  //
-  //&:after {
-  //  content: '';
-  //  position: absolute;
-  //  top: 2px;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //  transform: scale(0);
-  //  opacity: 0;
-  //  transition: .5s;
-  //  z-index: -1;
-  //}
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #B9110C;
+    border-bottom: 1px solid #B9110C;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: .5s;
+  }
 
-  //&:hover {
-  //  transition: .5s;
-  //  color: #B9110C;
-  //
-  //  &:before {
-  //    transform: scaleY(1);
-  //    opacity: 1;
-  //  }
-  //
-  //  &.active {
-  //    color: #B9110C;
-  //  }
-  //}
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    opacity: 0;
+    transition: .5s;
+    z-index: -1;
+  }
+
+  &:hover {
+    transition: .5s;
+    color: #B9110C;
+
+    &:before {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    &.active {
+      color: #B9110C;
+    }
+  }
 `
 const LogoWrapper = styled.div`
   grid-column: 6 / 8;
