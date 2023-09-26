@@ -14,13 +14,19 @@ const UmfButton = () => {
 export default UmfButton;
 
 const UMFButton = styled('a') `
-  position: absolute;
+  //position: absolute;
+  align-self: center;
+  grid-column: 9 / 11;
+  height: 50px;
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
   left: 70%;
   margin-left: 0px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  column-gap: 17px;
+  column-gap: 10px;
   border-radius: 10px;
   border: 1px solid #ffff;
   padding: 8px 15px;

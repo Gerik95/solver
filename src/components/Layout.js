@@ -39,12 +39,12 @@ const Layout = () => {
 
 
     return (
-        <>
+        <div className="main">
             <ScrollButtonUp/>
             <Navigation scrollTop={scrollTop}/>
             <Outlet/>
             <Footer/>
-        </>
+        </div>
     );
 };
 

@@ -6,7 +6,7 @@ const GeoButton = () => {
     return (
         <GEOButton target='_blank' href='https://goo.gl/maps/MZJ8vo7JpwRBvRB8A'>
             <img src={images.GeoLogo} alt="UMF logo"/>
-            м.Миколаїв, Херсонське шосе 115
+            м.Миколаїв, <br/> Херсонське шосе 115
         </GEOButton>
     );
 };
@@ -21,9 +21,14 @@ const GEOButton = styled('a') `
   font-weight: 700;
   cursor: pointer;
   transition: 0.5s;
+  grid-column: 11 / 13;
   &:hover {
     transform: scale(1.1, 1.1);
     color: #B9110C;
     fill: #B9110C;
+  }
+  
+  img {
+    margin-right: 5px;
   }
 `
