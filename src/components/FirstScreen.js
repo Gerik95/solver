@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import {images} from '../constants/images';
-import {itemScrollData} from '../data/item-scroll.data';
+import { images } from '../constants/images';
+import { itemScrollData } from '../data/item-scroll.data';
 import ItemScroll from './item-scroll/ItemScroll';
+import { theme } from "../constants/theme";
+
 
 const FirstScreen = ({componentsRef, itemScrollToggle}) => {
     return (
@@ -68,6 +70,10 @@ const CardSolver = styled('div') `
   img{
     position: relative;
     left: 125px;
+  }
+
+  @media (max-width: ${theme.breakpoint.xsm}) {
+    display: none;
   }
 `
 

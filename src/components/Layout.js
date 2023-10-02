@@ -43,7 +43,7 @@ const Layout = () => {
             <ScrollButtonUp/>
             <Navigation scrollTop={scrollTop}/>
             <Outlet/>
-            <Footer/>
+            {/*<Footer/>*/}
         </div>
     );
 };
