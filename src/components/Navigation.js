@@ -7,7 +7,6 @@ import { isMobile } from 'react-device-detect';
 import UmfButton from './buttons/UMFButton';
 import GeoButton from './buttons/GeoButton';
 import BurgerMenu from '../assets/images/icons/BurgerMenu';
-import Exit from '../assets/images/icons/Exit';
 
 import cn from "classnames";
 import { Container } from "../styled/main";
