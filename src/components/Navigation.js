@@ -1,88 +1,70 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { images } from '../constants/images';
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
-import { MobileView, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 import UmfButton from './buttons/UMFButton';
 import GeoButton from './buttons/GeoButton';
 import BurgerMenu from '../assets/images/icons/BurgerMenu';
-import Exit from '../assets/images/icons/Exit';
 
 import cn from "classnames";
 import { Container } from "../styled/main";
+import { theme } from "../constants/theme";
+import { useDispatch, useSelector } from "react-redux";
+import { handleNavActive } from "../store/slices/navSlice";
+import { ButtonMenu } from "../styled/button";
 
 
 const Navigation = ({ scrollTop }) => {
-  const [navActive, setNavActive] = useState(false);
-
-  const toggleHandler = () => setNavActive(prev => !prev);
-  const menuIcon = navActive ?
-    (<Exit/>) : (<BurgerMenu/>)
+  const { navActive } = useSelector(state => state.navigation);
+  const dispatch = useDispatch();
+  const MenuIcon = () => {
+    return (
+      <ButtonMenu onClick={() => dispatch(handleNavActive(true))}>
+        <BurgerMenu/>
+      </ButtonMenu>
+    );
+  }
 
   return (
-    <NavBar scrollTop={scrollTop} className={cn("nav-bar", {
-      mobile: isMobile,
-      active: navActive
-    })}>
+    <NavBar scrollTop={scrollTop}>
       <Container>
-        <NavBarLinks className={cn("", {
-          mobile: isMobile,
-          active: navActive
-        })}>
-          <NavLinkCustom to='/'>
-            Головна
-          </NavLinkCustom>
-          <NavLinkCustom to='about-us'>
-            Про нас
-          </NavLinkCustom>
-          <NavLinkCustom to='vacancies'>
-            Вакансії
-          </NavLinkCustom>
-          <NavLinkCustom to='contacts'>
-            Контакти
-          </NavLinkCustom>
-          {/*<NavLinkCustom to='cooperation'>*/}
-          {/*    Співробітництво*/}
-          {/*</NavLinkCustom>*/}
-        </NavBarLinks>
+        {!isMobile && (
+          <NavBarLinks className={cn("")}>
+            <NavLinkCustom to='/'>
+              Головна
+            </NavLinkCustom>
+            <NavLinkCustom to='about-us'>
+              Про нас
+            </NavLinkCustom>
+            <NavLinkCustom to='vacancies'>
+              Вакансії
+            </NavLinkCustom>
+            <NavLinkCustom to='contacts'>
+              Контакти
+            </NavLinkCustom>
+            {/*<NavLinkCustom to='cooperation'>*/}
+            {/*    Співробітництво*/}
+            {/*</NavLinkCustom>*/}
+          </NavBarLinks>
+        )}
         <LogoWrapper>
           <LogoNav to='/'>
             <img src={images.navLogo} alt="logo"/>
           </LogoNav>
         </LogoWrapper>
-        <UmfButton/>
-        <GeoButton/>
+        {!isMobile && (
+          <>
+            <UmfButton/>
+            <GeoButton/>
+          </>
+        )}
+        <MenuIconWrapper>
+          <MenuIcon/>
+        </MenuIconWrapper>
       </Container>
-      {/*<MenuButton onClick={toggleHandler}>{menuIcon}</MenuButton>*/}
-      {/*<Wrapper>*/}
-      {/*  <NavBarLinks className={cn("", {*/}
-      {/*    mobile: isMobile,*/}
-      {/*    active: navActive*/}
-      {/*  })}>*/}
-      {/*    <NavLinkCustom to='/'>*/}
-      {/*      Головна*/}
-      {/*    </NavLinkCustom>*/}
-      {/*    <NavLinkCustom to='about-us'>*/}
-      {/*      Про нас*/}
-      {/*    </NavLinkCustom>*/}
-      {/*    <NavLinkCustom to='vacancies'>*/}
-      {/*      Вакансії*/}
-      {/*    </NavLinkCustom>*/}
-      {/*    <NavLinkCustom to='contacts'>*/}
-      {/*      Контакти*/}
-      {/*    </NavLinkCustom>*/}
-      {/*    /!*<NavLinkCustom to='cooperation'>*!/*/}
-      {/*    /!*    Співробітництво*!/*/}
-      {/*    /!*</NavLinkCustom>*!/*/}
-
-      {/*  </NavBarLinks>*/}
-      {/*  <LogoNav to='/'>*/}
-      {/*    <img src={images.navLogo} alt="logo"/>*/}
-      {/*  </LogoNav>*/}
-      {/*  <UmfButton/>*/}
-      {/*  <GeoButton/>*/}
-      {/*</Wrapper>*/}
+      {/*{isMobile && navActive && <NavMobile/>}*/}
     </NavBar>
   );
 };
@@ -97,19 +79,19 @@ const NavBar = styled.div`
   // left: 0;
   // right: 0;
   // z-index: 1000;
-  
-  @media (max-width: 500px) {
-    z-index: 9999;
-    position: fixed;
-    background: red;
-    width: 100%;
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100vh;
-  }
+
+  //@media (max-width: 500px) {
+  //  z-index: 9999;
+  //  position: fixed;
+  //  background: red;
+  //  width: 100%;
+  //  flex-direction: column;
+  //  top: 0;
+  //  right: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  height: 100vh;
+  //}
 
   //&.mobile {
   //  position: fixed;
@@ -220,4 +202,10 @@ const LogoNav = styled(Link)`
   //left: 50%;
   //margin-left: -25px;
 
+`
+
+const MenuIconWrapper = styled.div`
+  @media (max-width: ${theme.breakpoint.xsm}) {
+    display: block;
+  }
 `
