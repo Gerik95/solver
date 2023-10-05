@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {images} from '../constants/images';
 import styled from 'styled-components';
+import { theme } from "../constants/theme";
 
 const ScrollButtonUp = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,4 +58,8 @@ const ButtonIcon = styled.div `
     height: 50px;
     width: 50px;
   }
+
+    @media (max-width: ${theme.breakpoint.lg}) {
+        right: ${(props => props.isShowButtonUp ? '10px' : '-50px')};
+    }
 `

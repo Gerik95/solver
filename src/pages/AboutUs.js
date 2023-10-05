@@ -70,7 +70,6 @@ const MainBlock = styled('div')`
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  align-items: center;
   background: linear-gradient(266deg, rgba(156, 156, 156, 0.40379901960784315) 0%, rgba(156, 156, 156, 0.4990371148459384) 40%, rgba(48, 48, 48, 0.6671043417366946) 75%);
   width: auto;
   height: auto;

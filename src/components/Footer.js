@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {images} from '../constants/images';
 import FacebookIcon from '../assets/images/svg/FacebookIcon';
 import InstaIcon from '../assets/images/svg/InstaIcon';
 import TgIcon from '../assets/images/svg/TGIcon';
+import { theme } from "../constants/theme";
 
 const Footer = () => {
     return (
@@ -33,15 +34,31 @@ const Footer = () => {
 
 export default Footer;
 
+const FooterLink = css`
+    color: #464C51;
+    transition: 0.5s ease;
+`
+
 const Container = styled('div') `
   height: 300px;
   background-image: url(${images.footerBg});
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    height: auto;
+      background-size: cover;
+  }
 `
 
 const Wrapper = styled('div') `
   padding: 15px 50px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 15px 20px;
+  }
 `
 
 const CardSolverSmall = styled('div') `
@@ -88,6 +105,7 @@ const FooterText = styled('p') `
   font-weight: 700;
   text-align: center;
   color: #464C51;
+  margin: 5px;
 `
 
 const FooterIcons = styled('div') `
@@ -96,34 +114,23 @@ const FooterIcons = styled('div') `
   row-gap: 30px;
   column-gap: 30px;
   align-content: center;
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    display: flex;
+    justify-content: center;
+  }
 `
 const FooterLinkTG = styled('a') `
-  color: #464C51;
-  transition: 0.5s ease;
+  ${FooterLink}
   &:hover {
     color: #229ED9;
     transform: scale(1.1, 1.1);
   }
 `
 const FooterLinkIN = styled('a') `
-  color: #464C51;
-  transition: 0.5s ease;
+  ${FooterLink}
   &:hover {
     color: #E1306C;
-    transform: scale(1.1, 1.1);
-  }
-`
-const FooterLinkFB = styled('a') `
-  color: #464C51;
-  transition: 0.5s ease;
-  &:hover {
-    color: #3b5998;
-    transform: scale(1.1, 1.1);
-  }
-`
-const FooterLinkUMF = styled('a') `
-  transition: 0.5s ease;
-  &:hover {
     transform: scale(1.1, 1.1);
   }
 `

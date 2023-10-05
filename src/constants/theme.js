@@ -7,4 +7,17 @@ export const theme = {
     xl: "1200px",
     xxl: "1400px",
   },
+  color: {
+    black: '#000',
+    white: '#fff',
+    lightGrey: '#cbcccd',
+    neonRed: '#f35753'
+  },
+  gradient: {
+    greyWhiteVertical: 'linear-gradient(90deg, rgba(170,170,170,1) 0%, rgba(254,254,254,1) 100%)',
+    trinityGreyHorizontal: 'linear-gradient(266deg, rgba(156, 156, 156, 0.40379901960784315) 0%, rgba(156, 156, 156, 0.4990371148459384) 40%, rgba(48, 48, 48, 0.6671043417366946) 75%)',
+  },
+  fontSize: {
+    font_48_30: 'clamp(1.875rem, 1.406vw + 1.594rem, 3rem)'
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {images} from '../../constants/images';
 import styled from 'styled-components';
+import { theme } from "../../constants/theme";
 
 const UmfButton = () => {
     return (
@@ -16,7 +17,7 @@ export default UmfButton;
 const UMFButton = styled('a') `
   //position: absolute;
   align-self: center;
-  grid-column: 9 / 11;
+  //grid-column: 9 / 11;
   height: 50px;
   width: 100%;
   max-width: 200px;
