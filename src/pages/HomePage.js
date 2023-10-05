@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import {isMobile} from "react-device-detect";
 
 const HomePage = () => {
-    const { navActive } = useSelector(state => state.navigation);
+
     const ref1 = React.useRef(null);
     const ref2 = React.useRef(null);
     const ref3 = React.useRef(null);
@@ -48,7 +48,6 @@ const HomePage = () => {
                       content="Ремонт двигунів, ремонт ходової частини, ремонт дизельної паливної апаратури, ремонт навісних агрегатів, ремонт турбокомпресорів,
                       ремонт рульових рейок, сажеві фільтри та каталізатори, заправка конциціонеру, озонування, регламентне обслуговування вашого автомобіля"/>
             </Helmet>
-            {isMobile && navActive && <NavMobile/>}
             <FirstScreen itemScrollToggle componentsRef={reference}/>
             <InfoSection
                 title="Ремонт ДВЗ"

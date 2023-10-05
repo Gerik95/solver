@@ -22,9 +22,12 @@ import ConditionerInfo from './info-text/ConditionerInfo';
 import OzonInfo from './info-text/OzonInfo';
 import FirstScreen from './FirstScreen';
 import ScrollButtonUp from './ScrollButtonUp';
+import { isMobile } from "react-device-detect";
+import NavMobile from "./mobile/NavMobile";
+import { useSelector } from "react-redux";
 
 const Layout = () => {
-
+  const { navActive } = useSelector(state => state.navigation);
     const [scrollTop, setScrollTop] = useState(0);
     useEffect(() => {
         const onScroll = () => {
@@ -40,6 +43,7 @@ const Layout = () => {
 
     return (
         <div className="main">
+          {isMobile && navActive && <NavMobile/>}
             <ScrollButtonUp/>
             <Navigation scrollTop={scrollTop}/>
             <Outlet/>
