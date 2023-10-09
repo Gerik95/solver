@@ -14,7 +14,7 @@ const Footer = () => {
                     <CardHeading>Solver</CardHeading>
                     <img src={images.footerLogo} alt="footer logo"/>
                     <CardWorkDay>Без вихідних</CardWorkDay>
-                    <CardTime>09:00 - 20:00</CardTime>
+                    <CardTime>09:00 - 19:00</CardTime>
                 </CardSolverSmall>
                 <FooterInfo>
                     <FooterText>Всі роботи проводяться спеціалізованим обладнанням.</FooterText>

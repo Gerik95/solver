@@ -60,7 +60,7 @@ const Logo = styled.img`
 `
 
 const Container = styled.div`
-  position: fixed;
+  position: fixed; 
   padding: 15px;
   left: 0;
   right: 0;

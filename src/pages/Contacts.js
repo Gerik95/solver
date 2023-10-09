@@ -1,17 +1,20 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
-import { images } from '../constants/images';
-import LogoBg from '../assets/images/LeftLogoBg.png';
-import { theme } from "../constants/theme";
+import {images} from '../constants/images';
+import {theme} from '../constants/theme';
+import {Link} from 'react-router-dom';
+import DownloadButton from '../components/buttons/DownloadButton';
 
 const Contacts = () => {
+
+
   return (
     <>
       <Helmet>
-        <title>СТО "Solver" - Контакти</title>
+        <title>Автосервіс "Solver" - Контакти</title>
         <meta name="description"
-              content="Станція технічного обслуговування Солвер Миколаїв, місто Миколаїв, Херсонське шоссе 115, СТО Николаев, СТО Херсонське шоссе, Автосервіс Миколаїв, СТО Інгульский район, Solver, HM Service"/>
+              content="Автосервіс Солвер Миколаїв, місто Миколаїв, Херсонське шоссе 115, СТО Николаев, СТО Херсонське шоссе, Автосервіс Миколаїв, СТО Інгульский район, Solver, HM Service"/>
       </Helmet>
       <Container>
         <Wrapper>
@@ -34,12 +37,13 @@ const Contacts = () => {
                 </Social>
                 <PhoneButton>
                   <img src={images.phoneIcon} alt="Phone"/>
-                  <a href="tel:+380730130014">+38 (073) 013 00 14</a>
+                  <a target='_blank' href="https://t.me/hmservice1">+38 (073) 013 00 14</a>
                 </PhoneButton>
-                <UMFButton target='_blank' href='https://www.google.com/'>
+                <UMFButton target='_blank' href='https://prytulafoundation.org/'>
                   <img src={images.UMFLogo} alt="UMF logo"/>
                   Підтримати ЗСУ
                 </UMFButton>
+                <DownloadButton/>
               </RightSection>
             </CardSolver>
           </ContactInfo>
@@ -51,7 +55,6 @@ const Contacts = () => {
           </MapSection>
         </Wrapper>
       </Container>
-
     </>
   );
 };

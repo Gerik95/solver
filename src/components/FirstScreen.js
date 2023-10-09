@@ -29,7 +29,7 @@ const FirstScreen = ({componentsRef, itemScrollToggle}) => {
                     <Logo src={images.cardLogo} alt="footer logo"/>
                     <CardHeading>Solver</CardHeading>
                     <CardWorkDay>Без вихідних</CardWorkDay>
-                    <CardTime>09:00 - 18:00</CardTime>
+                    <CardTime>09:00 - 19:00</CardTime>
                 </CardSolver>
             </Wrapper>
         </Container>

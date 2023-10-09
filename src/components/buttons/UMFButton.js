@@ -1,11 +1,10 @@
 import React from 'react';
 import {images} from '../../constants/images';
 import styled from 'styled-components';
-import { theme } from "../../constants/theme";
 
 const UmfButton = () => {
     return (
-        <UMFButton target='_blank' href='https://www.google.com/'>
+        <UMFButton target='_blank' href='https://prytulafoundation.org/'>
             <img src={images.UMFLogo} alt="UMF logo"/>
             Підтримати ЗСУ
         </UMFButton>

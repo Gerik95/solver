@@ -10,9 +10,9 @@ const Vacancies = () => {
   return (
     <>
       <Helmet>
-        <title>СТО "Solver" - Вакансії</title>
+        <title>Автосервіс "Solver" - Вакансії</title>
         <meta name="description"
-              content="Станція технічного обслуговування Солвер в Україні, місто Миколаїв, Херсонське шоссе 115"/>
+              content="Станція технічного обслуговування Солвер в Україні, місто Миколаїв, Херсонське шоссе 115. Вакансії Миколаїв, робота Миколаїв, вакансии Николаев, работа Николаев"/>
       </Helmet>
       <ContainerVacancies>
         <Wrapper>
@@ -22,7 +22,7 @@ const Vacancies = () => {
             <Title>руками</Title>
             <SubTitle>
               Обирайте Solver, ставайте частиною
-              нашої дружної родини, та разом з нами
+              нашої дружної родини та разом з нами
               допомагайте людям пересуватися
               комфортно.
             </SubTitle>
@@ -33,11 +33,11 @@ const Vacancies = () => {
           <CardsBlock>
             <CardItemFirst>
               <CardVacancies title="Моторист"
-                             description="Робіть двигуни надійними, та заробляйте гроші."/>
+                             description="Робіть двигуни надійними та заробляйте гроші."/>
             </CardItemFirst>
             <CardItemSecond>
               <CardVacancies title="Механік"
-                             description="Робіть дорожній рух безпечним,а життя людей комфортним."/>
+                             description="Робіть дорожній рух безпечним, а життя людей комфортним."/>
             </CardItemSecond>
             <CardItemThird>
               <CardVacancies title="Кондиціонувальник"

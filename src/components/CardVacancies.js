@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {images} from '../constants/images';
 import { theme } from "../constants/theme";
 
+
 const CardVacancies = ({title, description}) => {
     const [isShown, setIsShown] = useState(false);
 
@@ -22,8 +23,8 @@ const CardVacancies = ({title, description}) => {
                     <H2Info>{description}</H2Info>
                   </WrapperContent>
                     {!isShown ? <DetailsButton onClick={openClick}>Детальніше</DetailsButton> : <PhoneButton onClick={closeClick}>
-                        <img src={images.phoneIcon} alt="Phone"/>
-                        <a href="tel:+380730130014">+38 (073) 013 00 14</a>
+                        <img src={images.miniTgIcon} alt="Phone"/>
+                        <a target='_blank' href="https://t.me/hmservice1">@hmservice1</a>
                     </PhoneButton>}
                 </Wrapper>
             </Card>

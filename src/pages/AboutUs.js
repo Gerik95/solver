@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <>
       <Helmet>
-        <title>СТО "Solver" - Про нас</title>
+        <title>Автосервіс "Solver" - Про нас</title>
         <meta name="description"
               content="Станція технічного обслуговування Солвер в Україні, місто Миколаїв, Херсонське шоссе 115. Ми НЕ ремонтуємо автомобілі!
                       Ми вирішуємо проблеми наших клієнтів з їх автомобілями! © Solver"/>
@@ -45,7 +45,7 @@ const AboutUs = () => {
           </MainText>
           <PhoneButton>
             <img src={images.phoneIcon} alt="Phone"/>
-            <a href="tel:+380730130014">+38 (073) 013 00 14</a>
+            <a target='_blank' href="https://t.me/hmservice1">+38 (073) 013 00 14</a>
           </PhoneButton>
         </MainBlock>
       </ContainerAboutUs>
