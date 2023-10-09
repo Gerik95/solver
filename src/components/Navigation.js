@@ -30,36 +30,32 @@ const Navigation = ({ scrollTop }) => {
   return (
     <NavBar scrollTop={scrollTop}>
       <Container>
-        {!isMobile && (
-          <NavBarLinks className={cn("")}>
-            <NavLinkCustom to='/'>
-              Головна
-            </NavLinkCustom>
-            <NavLinkCustom to='about-us'>
-              Про нас
-            </NavLinkCustom>
-            <NavLinkCustom to='vacancies'>
-              Вакансії
-            </NavLinkCustom>
-            <NavLinkCustom to='contacts'>
-              Контакти
-            </NavLinkCustom>
-            {/*<NavLinkCustom to='cooperation'>*/}
-            {/*    Співробітництво*/}
-            {/*</NavLinkCustom>*/}
-          </NavBarLinks>
-        )}
+        <NavBarLinks className={cn("")}>
+          <NavLinkCustom to='/'>
+            Головна
+          </NavLinkCustom>
+          <NavLinkCustom to='about-us'>
+            Про нас
+          </NavLinkCustom>
+          <NavLinkCustom to='vacancies'>
+            Вакансії
+          </NavLinkCustom>
+          <NavLinkCustom to='contacts'>
+            Контакти
+          </NavLinkCustom>
+          {/*<NavLinkCustom to='cooperation'>*/}
+          {/*    Співробітництво*/}
+          {/*</NavLinkCustom>*/}
+        </NavBarLinks>
         <LogoWrapper>
           <LogoNav to='/'>
             <img src={images.navLogo} alt="logo"/>
           </LogoNav>
         </LogoWrapper>
-        {!isMobile && (
-          <>
-            <UmfButton/>
-            <GeoButton/>
-          </>
-        )}
+        <Info>
+          <UmfButton/>
+          <GeoButton/>
+        </Info>
         <MenuIconWrapper>
           <MenuIcon/>
         </MenuIconWrapper>
@@ -75,68 +71,33 @@ const NavBar = styled.div`
   backdrop-filter: blur(5px);
   background: ${(props => props.scrollTop > 100 ? 'linear-gradient(180deg, rgba(156,156,156,0.6530987394957983) 0%, rgba(156,156,156,0.4514180672268907) 50%, rgba(156,156,156,0.5242471988795518) 100%)' : 'linear-gradient(266deg, rgba(156,156,156,0.40379901960784315) 0%, rgba(156,156,156,0.4990371148459384) 40%, rgba(48,48,48,0.6671043417366946) 75%)')};
   height: 100px;
-  // position: fixed;
-  // left: 0;
-  // right: 0;
-  // z-index: 1000;
 
-  //@media (max-width: 500px) {
-  //  z-index: 9999;
-  //  position: fixed;
-  //  background: red;
-  //  width: 100%;
-  //  flex-direction: column;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //  height: 100vh;
-  //}
-
-  //&.mobile {
-  //  position: fixed;
-  //  height: 100vh;
-  //  width: 100%;
-  //  background-color: #000;
-  //  z-index: 1001;
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  left: -100%;
-  //  transition: left .5s;
-  //}
-  //
-  //&.mobile.active {
-  //  left: 0;
-  //}
+  @media (max-width: ${theme.breakpoint.lg}) {
+    height: 60px;
+  }
 `
 
-const MenuButton = styled('button')`
-  top: 15px;
+const Info = styled.div`
+  grid-column: 9 /13;
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+
+  @media (max-width: ${theme.breakpoint.lg}) {
+    display: none;
+  }
 `
 
-const Wrapper = styled('div')`
-  //height: 100px;
-  //padding: 0 30px;
-  //display: flex;
-  //align-items: center;
-  //justify-content: space-between;
-`
 const NavBarLinks = styled('div')`
   grid-column: 1 / 6;
   display: flex;
   column-gap: 15px;
   align-items: center;
-  @media (max-width: 500px) {
-    //flex-direction: column;
-    //row-gap: 10px;
-    //align-items: center;
-  }
 
-  //&.mobile {
-  //  flex-direction: column;
-  //  row-gap: 10px;
-  //  align-items: center;
-  //}
+  @media (max-width: ${theme.breakpoint.lg}) {
+    display: none;
+  }
 `
 const NavLinkCustom = styled(NavLink)`
   font-weight: 400;
@@ -195,17 +156,19 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${theme.breakpoint.lg}) {
+    display: none;
+  }
 `
 
 const LogoNav = styled(Link)`
-  //position: absolute;
-  //left: 50%;
-  //margin-left: -25px;
 
 `
 
 const MenuIconWrapper = styled.div`
-  @media (max-width: ${theme.breakpoint.xsm}) {
+  display: none;
+  @media (max-width: ${theme.breakpoint.lg}) {
     display: block;
   }
 `

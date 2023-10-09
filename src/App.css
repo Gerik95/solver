@@ -15,6 +15,7 @@ a {
 }
 
 p {
+  padding: 0;
   cursor: default;
 }
 

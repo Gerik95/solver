@@ -4,9 +4,11 @@ import { images } from '../constants/images';
 import { itemScrollData } from '../data/item-scroll.data';
 import ItemScroll from './item-scroll/ItemScroll';
 import { theme } from "../constants/theme";
+import { columnCenter } from "../styled/main";
 
 
 const FirstScreen = ({componentsRef, itemScrollToggle}) => {
+
     return (
         <Container>
             <Wrapper>
@@ -24,10 +26,10 @@ const FirstScreen = ({componentsRef, itemScrollToggle}) => {
                         })}
                     </ScrollStyles>
                 <CardSolver>
-                    <img src={images.cardLogo} alt="footer logo"/>
+                    <Logo src={images.cardLogo} alt="footer logo"/>
                     <CardHeading>Solver</CardHeading>
                     <CardWorkDay>Без вихідних</CardWorkDay>
-                    <CardTime>09:00 - 18:00</CardTime>
+                    <CardTime>09:00 - 19:00</CardTime>
                 </CardSolver>
             </Wrapper>
         </Container>
@@ -38,15 +40,22 @@ export default FirstScreen;
 
 const Container = styled('div') `
   background-image: url(${images.firstScreen});
-  height: 100vh;
+  height: calc(100vh - 50px);
   background-size: cover;
-  @media screen and (max-width: 500px) {
-    
-  }
 `
 
 const Wrapper = styled('div') `
   padding: 0 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: ${theme.breakpoint.lg}) {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
 `
 
 const ScrollStyles = styled('div')`
@@ -56,54 +65,70 @@ const ScrollStyles = styled('div')`
   left: -240px;
   transform: translate(-50%,-50%);
   z-index: 2;
-`
-
-const CardSolver = styled('div') `
-  background: linear-gradient(180deg, rgba(0,91,187,0.3533788515406162) 0%, rgba(255,213,0,0.3533788515406162) 100%);
-  width: 500px;
-  height: 611px;
-  position: absolute;
-  top: 20%;
-  left: 70%;
-  border-radius: 20px;
-  padding-top: 60px;
-  img{
-    position: relative;
-    left: 125px;
-  }
-
-  @media (max-width: ${theme.breakpoint.xsm}) {
+  
+  @media (max-width: ${theme.breakpoint.lg}) {
     display: none;
   }
 `
 
+const CardSolver = styled('div')`
+  ${columnCenter};
+  background: linear-gradient(180deg, rgba(0,91,187,0.5) 0%, rgba(255,213,0,0.5) 100%);
+  width: clamp(18.75rem, 15.625vw + 15.625rem, 31.25rem);
+  border-radius: 20px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+
+  @media (max-width: ${theme.breakpoint.lg}) {
+    width: clamp(21.875rem, 61.012vw + 9.673rem, 47.5rem);
+  }
+`
+
+const Logo = styled.img`
+  width: 100%;
+  max-width: clamp(12.5rem, 4.688vw + 11.563rem, 16.25rem);
+`
+
 const CardHeading = styled('p') `
   padding: 30px 0;
-  margin: 0;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
   color: #121619;
-  font-size: 48px;
+  font-size: clamp(1.875rem, 1.406vw + 1.594rem, 3rem);
   font-family: 'Michroma', sans-serif;
   text-shadow: 0px 13px 6px;
   text-align: center;
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    color: ${theme.color.lightGrey};
+    padding: 0;
+    margin: 15px 0;
+    text-shadow: 0px 6px 10px;
+  }
 `
 
 const CardWorkDay = styled('p') `
-  padding: 0;
-  margin: 0;
-  margin-top: 15px;
-  font-size: 40px;
+  margin: 15px 0 0;
+  font-size: clamp(1.5rem, 1.25vw + 1.25rem, 2.5rem);
   color: #121619;
-  text-shadow: 0px 13px 6px;
+  text-shadow: 0 13px 6px;
   text-align: center;
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    color: ${theme.color.lightGrey};
+    text-shadow: none;
+  }
 `
 
 const CardTime = styled('p') `
-  padding: 0;
   margin: 0;
   color: #B9110C;
   font-family: 'Michroma', sans-serif;
-  text-shadow: 0px 13px 6px;
-  font-size: 40px;
+  text-shadow: 0 13px 6px;
+  font-size: clamp(1.5rem, 1.25vw + 1.25rem, 2.5rem);
   text-align: center;
+
+  @media (max-width: ${theme.breakpoint.sm}) {
+    color: ${theme.color.neonRed};
+    text-shadow: none;
+  }
 `

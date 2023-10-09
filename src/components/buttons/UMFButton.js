@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const UmfButton = () => {
     return (
-        <UMFButton target='_blank' href='https://www.google.com/'>
+        <UMFButton target='_blank' href='https://prytulafoundation.org/'>
             <img src={images.UMFLogo} alt="UMF logo"/>
             Підтримати ЗСУ
         </UMFButton>
@@ -16,7 +16,7 @@ export default UmfButton;
 const UMFButton = styled('a') `
   //position: absolute;
   align-self: center;
-  grid-column: 9 / 11;
+  //grid-column: 9 / 11;
   height: 50px;
   width: 100%;
   max-width: 200px;

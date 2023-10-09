@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import {isMobile} from "react-device-detect";
 
 const HomePage = () => {
-    const { navActive } = useSelector(state => state.navigation);
+
     const ref1 = React.useRef(null);
     const ref2 = React.useRef(null);
     const ref3 = React.useRef(null);
@@ -43,90 +43,89 @@ const HomePage = () => {
     return (
         <>
             <Helmet>
-                <title>СТО "Solver" - Головна</title>
+                <title>Автосервіс "Solver" - Головна</title>
                 <meta name="description"
                       content="Ремонт двигунів, ремонт ходової частини, ремонт дизельної паливної апаратури, ремонт навісних агрегатів, ремонт турбокомпресорів,
                       ремонт рульових рейок, сажеві фільтри та каталізатори, заправка конциціонеру, озонування, регламентне обслуговування вашого автомобіля"/>
             </Helmet>
-            {isMobile && navActive && <NavMobile/>}
             <FirstScreen itemScrollToggle componentsRef={reference}/>
-            {/*<InfoSection*/}
-            {/*    title="Ремонт ДВЗ"*/}
-            {/*    description="Здійснюємо діагностику та ремонт дизельних та бензинових двигунів."*/}
-            {/*    image={images.engineImg}*/}
-            {/*    bgImage={`url(${images.leftLogoBg})`}*/}
-            {/*    componentRef={ref1}*/}
-            {/*>*/}
-            {/*    <EngineInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Ходова частина"*/}
-            {/*    image={images.suspentionImg}*/}
-            {/*    bgImage={`url(${images.rightLogoBg})`}*/}
-            {/*    reverse*/}
-            {/*    componentRef={ref2}*/}
-            {/*>*/}
-            {/*    <SuspentionInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Дизельна паливна апаратура"*/}
-            {/*    image={images.dieselImg}*/}
-            {/*    bgImage={`url(${images.leftLogoBg})`}*/}
-            {/*    componentRef={ref3}*/}
-            {/*>*/}
-            {/*    <DieselInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Ремонт навісних агрегатів"*/}
-            {/*    image={images.alternatorImg}*/}
-            {/*    bgImage={`url(${images.rightLogoBg})`}*/}
-            {/*    reverse*/}
-            {/*    componentRef={ref4}*/}
-            {/*>*/}
-            {/*    <AlternatorInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Ремонт турбокомпресорів"*/}
-            {/*    image={images.turboImg}*/}
-            {/*    bgImage={`url(${images.leftLogoBg})`}*/}
-            {/*    componentRef={ref5}*/}
-            {/*>*/}
-            {/*    <TurboInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Ремонт кермових рейок"*/}
-            {/*    image={images.steringImg}*/}
-            {/*    bgImage={`url(${images.rightLogoBg})`}*/}
-            {/*    reverse*/}
-            {/*    componentRef={ref6}*/}
-            {/*>*/}
-            {/*    <SteringInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Сажові фільтри та каталізатори"*/}
-            {/*    image={images.catalizatorImg}*/}
-            {/*    bgImage={`url(${images.leftLogoBg})`}*/}
-            {/*    componentRef={ref7}*/}
-            {/*>*/}
-            {/*    <CatalizatorInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Системи кондиціонування"*/}
-            {/*    image={images.conditionerImg}*/}
-            {/*    bgImage={`url(${images.rightLogoBg})`}*/}
-            {/*    reverse*/}
-            {/*    componentRef={ref8}*/}
-            {/*>*/}
-            {/*    <ConditionerInfo/>*/}
-            {/*</InfoSection>*/}
-            {/*<InfoSection*/}
-            {/*    title="Озонування"*/}
-            {/*    image={images.ozonImg}*/}
-            {/*    bgImage={`url(${images.leftLogoBg})`}*/}
-            {/*    componentRef={ref9}*/}
-            {/*>*/}
-            {/*    <OzonInfo/>*/}
-            {/*</InfoSection>*/}
+            <InfoSection
+                title="Ремонт ДВЗ"
+                description="Здійснюємо діагностику та ремонт дизельних та бензинових двигунів."
+                image={images.engineImg}
+                bgImage={`url(${images.leftLogoBg})`}
+                componentRef={ref1}
+            >
+                <EngineInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Ходова частина"
+                image={images.suspentionImg}
+                bgImage={`url(${images.rightLogoBg})`}
+                reverse
+                componentRef={ref2}
+            >
+                <SuspentionInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Дизельна паливна апаратура"
+                image={images.dieselImg}
+                bgImage={`url(${images.leftLogoBg})`}
+                componentRef={ref3}
+            >
+                <DieselInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Ремонт навісних агрегатів"
+                image={images.alternatorImg}
+                bgImage={`url(${images.rightLogoBg})`}
+                reverse
+                componentRef={ref4}
+            >
+                <AlternatorInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Ремонт турбокомпресорів"
+                image={images.turboImg}
+                bgImage={`url(${images.leftLogoBg})`}
+                componentRef={ref5}
+            >
+                <TurboInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Ремонт кермових рейок"
+                image={images.steringImg}
+                bgImage={`url(${images.rightLogoBg})`}
+                reverse
+                componentRef={ref6}
+            >
+                <SteringInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Сажові фільтри та каталізатори"
+                image={images.catalizatorImg}
+                bgImage={`url(${images.leftLogoBg})`}
+                componentRef={ref7}
+            >
+                <CatalizatorInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Системи кондиціонування"
+                image={images.conditionerImg}
+                bgImage={`url(${images.rightLogoBg})`}
+                reverse
+                componentRef={ref8}
+            >
+                <ConditionerInfo/>
+            </InfoSection>
+            <InfoSection
+                title="Озонування"
+                image={images.ozonImg}
+                bgImage={`url(${images.leftLogoBg})`}
+                componentRef={ref9}
+            >
+                <OzonInfo/>
+            </InfoSection>
         </>
     );
 };
