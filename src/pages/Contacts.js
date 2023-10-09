@@ -5,6 +5,8 @@ import {images} from '../constants/images';
 import {theme} from '../constants/theme';
 import {Link} from 'react-router-dom';
 import DownloadButton from '../components/buttons/DownloadButton';
+import DownloadIcon from '../assets/images/svg/DownloadIcon';
+import PhoneIcon from '../assets/images/svg/PhoneIcon';
 
 const Contacts = () => {
 
@@ -36,14 +38,19 @@ const Contacts = () => {
                     src={images.instaContsct} alt="Instagram"/></InstIcon>
                 </Social>
                 <PhoneButton>
-                  <img src={images.phoneIcon} alt="Phone"/>
+                  <PhoneIcon/>
                   <a target='_blank' href="https://t.me/hmservice1">+38 (073) 013 00 14</a>
                 </PhoneButton>
-                <UMFButton target='_blank' href='https://prytulafoundation.org/'>
-                  <img src={images.UMFLogo} alt="UMF logo"/>
-                  Підтримати ЗСУ
-                </UMFButton>
-                <DownloadButton/>
+                <Buttons>
+                  <DownloadLink target='_blank' href='https://prytulafoundation.org/'>
+                    <img src={images.UMFLogo} alt="UMF logo"/>
+                    Підтримати ЗСУ
+                  </DownloadLink>
+                  <DownloadLink href="https://drive.google.com/u/0/uc?id=1bvXivIQoq4VkxJ7p_6WfjhKzKrEsxTxO&export=download" download='Автосервіс Solver Миколаїв.vcf'>
+                    <DownloadIcon/>
+                    Отримати візитку
+                  </DownloadLink>
+                </Buttons>
               </RightSection>
             </CardSolver>
           </ContactInfo>
@@ -100,6 +107,9 @@ const CardSolver = styled('div')`
 
 const LeftSection = styled('div')`
   grid-column: 1 / 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: ${theme.breakpoint.lg}) {
     grid-column: 1 / 6;
@@ -147,25 +157,14 @@ const Social = styled('div')`
   gap: 30px;
 `
 
-const UMFButton = styled('a')`
-  margin-left: 0px;
+const Buttons = styled('div')`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 17px;
-  border-radius: 10px;
-  border: 1px solid #ffff;
-  padding: 8px 15px;
-  font-size: 14px;
-  color: #ffff;
-  cursor: pointer;
-  transition: 0.5s;
-
-  &:hover {
-    color: #B9110C;
-    border: 1px solid #B9110C;
+  gap: 15px;
+  @media (max-width: ${theme.breakpoint.xl}) {
+    flex-direction: column;
   }
 `
+
 
 const PhoneButton = styled('div')`
   display: flex;
@@ -177,16 +176,16 @@ const PhoneButton = styled('div')`
   transition: 0.5s ease;
 
   &:hover {
-    transform: scale(1.1, 1.1);
+    color: ${theme.color.lightGrey};
+    text-shadow: 0px 5px 6px ${theme.color.black};
   }
 `
 
 const TGIcon = styled('a')`
   color: #464C51;
   transition: 0.5s ease;
-
   &:hover {
-    transform: rotate(360deg);
+    transform: rotate(360deg); 
   }
 `
 const InstIcon = styled('a')`
@@ -195,5 +194,28 @@ const InstIcon = styled('a')`
 
   &:hover {
     transform: rotate(360deg);
+  }
+`
+
+const DownloadLink = styled('a') `
+  min-width: 200px;
+  box-sizing: border-box;
+  align-self: center;
+  height: 50px;
+  margin-left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #ffff;
+  padding: 8px ;
+  font-size: 14px;
+  color: #ffff;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: #B9110C;
+    border: 1px solid #B9110C;
   }
 `

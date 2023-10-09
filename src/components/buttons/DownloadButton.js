@@ -19,7 +19,7 @@ const DownloadButton = () => {
     };
 
     return (
-        <Download onClick={() => downloadFile('../../data/business-card/card.vcf', 'card.vcf')} >
+        <Download onClick={() => downloadFile('https://drive.google.com/u/0/uc?id=1bvXivIQoq4VkxJ7p_6WfjhKzKrEsxTxO&export=download', 'card.vcf')} >
             <img src={DownloadIcon} alt="Download business card"/>
             Отримати візитку
         </Download>
@@ -29,9 +29,7 @@ const DownloadButton = () => {
 export default DownloadButton;
 
 const Download = styled('button') `
-  //position: absolute;
   align-self: center;
-  //grid-column: 9 / 11;
   height: 50px;
   width: 100%;
   max-width: 200px;

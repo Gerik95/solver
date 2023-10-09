@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { images } from '../constants/images';
 import { Container } from "../styled/main";
 import { theme } from "../constants/theme";
+import PhoneIcon from '../assets/images/svg/PhoneIcon';
 
 const AboutUs = () => {
   return (
@@ -44,7 +45,7 @@ const AboutUs = () => {
             надзвичайним результатом.
           </MainText>
           <PhoneButton>
-            <img src={images.phoneIcon} alt="Phone"/>
+            <PhoneIcon/>
             <a target='_blank' href="https://t.me/hmservice1">+38 (073) 013 00 14</a>
           </PhoneButton>
         </MainBlock>
